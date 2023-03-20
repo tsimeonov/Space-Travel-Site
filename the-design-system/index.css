@@ -110,6 +110,12 @@ select {
   gap: var(--gap, 1rem);
 }
 
+/* Spacing */
+.flow > *:not(:first-child) {
+  margin-top: var(--flow-space, 1rem);
+  outline: 1px solid red;
+}
+
 .container {
   padding: 0 2em;
   margin: 0 auto;
