@@ -334,6 +334,16 @@ select {
   opacity: 1;
 }
 
+/* Primary Header */
+.logo {
+  margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.primary-header {
+  justify-content: space-between;
+  align-items: center;
+}
+
 .primary-navigation {
   --uderline-gap: 2rem;
   list-style: none;
@@ -343,8 +353,13 @@ select {
   backdrop-filter: blur(1rem);
 }
 
+.mobile-nav-toggle {
+  display: none;
+}
+
 @media (max-width: 35rem) {
   .primary-navigation {
+    --gap: clamp(1.5rem, 5vw, 3.5rem);
     --uderline-gap: 0.5rem;
     position: fixed;
     inset: 0 0 0 20%;
@@ -396,6 +411,16 @@ select {
 .primary-navigation a > span {
   font-weight: 700;
   margin-right: 0.5em;
+}
+
+@media (min-width: 35rem) and (max-width: 45rem) {
+  .primary-navigation {
+    padding-inline: 3rem;
+  }
+
+  .primary-navigation a > span {
+    display: none;
+  }
 }
 
 /* Select every direct dicended of the indicators */
