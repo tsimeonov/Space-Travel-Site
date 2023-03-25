@@ -339,13 +339,15 @@ select {
   list-style: none;
   padding: 0;
   margin: 0;
+  background: hsl(var(--clr-white) / 0.05);
+  backdrop-filter: blur(1rem);
 }
 
 @media (max-width: 35rem) {
   .primary-navigation {
     --uderline-gap: 0.5rem;
     position: fixed;
-    background: lightblue;
+
     inset: 0 0 0 20%;
     z-index: 1000;
     list-style: none;
