@@ -149,11 +149,21 @@ select {
 }
 
 .grid-container {
+  text-align: center;
+  border: 1px solid limegreen;
   display: grid;
+  place-items: center;
+  padding-inline: 1rem;
+}
+
+/* anything inside the .grid-container */
+.grid-container * {
+  max-width: 50ch;
 }
 
 @media (min-width: 45em) {
   .grid-container {
+    text-align: left;
     column-gap: var(--container-gap, 2rem);
     grid-template-columns: minmax(2rem, 1fr) minmax(0, 40rem) minmax(0, 40rem) minmax(
         2rem,
@@ -169,6 +179,11 @@ select {
   .grid-container > *:last-child {
     grid-column: 3;
     outline: 1px solid blue;
+  }
+
+  .grid-container-home {
+    /* padding-bottom: 10rem; */
+    align-items: center;
   }
 }
 
@@ -288,6 +303,7 @@ select {
 
 .large-button {
   /* display: inline block; */
+  font-size: 2rem;
   position: relative;
   display: inline-grid;
   z-index: 1;
@@ -396,4 +412,30 @@ select {
 .number-indicators > [aria-selected="true"] {
   color: hsl(var(--clr-dark));
   background-color: hsl(var(--clr-white) / 1);
+}
+
+/* -------------------------- */
+/* Page Specific background   */
+/* -------------------------- */
+body {
+  background-size: cover;
+  background-position: bottom center;
+}
+
+/* Home */
+.home {
+  background-image: url(./assets/home/background-home-mobile.png);
+}
+
+@media (min-width: 35rem) {
+  .home {
+    background-position: center center;
+    background-image: url(./assets/home/background-home-tablet.png);
+  }
+}
+
+@media (min-width: 45rem) {
+  .home {
+    background-image: url(./assets/home/background-home-desktop.png);
+  }
 }
