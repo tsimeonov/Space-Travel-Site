@@ -85,9 +85,9 @@ body {
   background-color: hsl(var(--clr-dark));
   line-height: 1.5;
   min-height: 100vh;
-
   display: grid;
   grid-template-rows: min-content 1fr;
+  overflow-x: hidden;
 }
 
 /* Make images easier to work with */
@@ -347,17 +347,31 @@ select {
   .primary-navigation {
     --uderline-gap: 0.5rem;
     position: fixed;
-
     inset: 0 0 0 20%;
     z-index: 1000;
     list-style: none;
     padding: min(20rem, 15vh) 2rem;
     margin: 0;
     flex-direction: column;
+    transform: translateX(100%);
   }
 
   .primary-navigation.underline-indicators > .active {
     border: 0;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 2000;
+    right: 1rem;
+    top: 2rem;
+    background: transparent;
+    border: 0;
+    background-image: url(./assets/shared/icon-hamburger.svg);
+    background-repeat: no-repeat;
+    width: 1.5em;
+    height: 1.4em;
   }
 }
 
