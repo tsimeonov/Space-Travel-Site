@@ -20,26 +20,27 @@ const tabs = tabList.querySelectorAll('[role="tab"]');
 
 tabList.addEventListener("keydown", changeTabFocus);
 
+tabs.forEach((tab) => {
+  tab.addEventListener("click", changeTabPanel);
+});
+
 let tabFocus = 0;
 function changeTabFocus(e) {
-  const keyDownLeft = 37;
-  const keyDownRight = 39;
+  const keydownLeft = 37;
+  const keydownRight = 39;
 
-  // Change the tabindex of the current tab to -1
-  if (e.keyCode === keyDownLeft || e.keyCode === keyDownRight) {
+  if (e.keyCode === keydownLeft || e.keyCode === keydownRight) {
     tabs[tabFocus].setAttribute("tabindex", -1);
   }
 
-  // If the right key is pushed, move to the next tab on the right
-  if (e.keyCode === keyDownRight) {
+  if (e.keyCode === keydownRight) {
     tabFocus++;
     if (tabFocus >= tabs.length) {
       tabFocus = 0;
     }
   }
 
-  // If the left key is pushed, move to the next tab on the left
-  if (e.keyCode === keyDownLeft) {
+  if (e.keyCode === keydownLeft) {
     tabFocus--;
     if (tabFocus < 0) {
       tabFocus = tabs.length - 1;
@@ -48,4 +49,16 @@ function changeTabFocus(e) {
 
   tabs[tabFocus].setAttribute("tabindex", 0);
   tabs[tabFocus].focus();
+}
+
+function changeTabPanel(e) {
+  const targetTab = e.target;
+  const targetPanel = targetTab.getAttribute("aria-controls");
+
+  const tabContainer = targetTab.parentNode;
+  const mainContainer = tabContainer.parentNode;
+
+  mainContainer.querySelector([`#${targetPanel}`]).removeAttribute("hidden");
+
+  // console.log(mainContainer);
 }
