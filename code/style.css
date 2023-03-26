@@ -144,6 +144,10 @@ select {
   /* outline: 1px solid red; */
 }
 
+.flow-space-small {
+  --flow-space: /5rem;
+}
+
 .container {
   padding: 0 2em;
   margin: 0 auto;
@@ -411,7 +415,8 @@ select {
 
 /* Select every direct dicended of the indicators */
 .underline-indicators > * {
-  padding: var(--underline-gap, 1rem) 0;
+  background-color: transparent;
+  padding: var(--underline-gap, 0.5rem) 0;
   border: 0;
   cursor: pointer;
   border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
@@ -498,6 +503,42 @@ body {
   }
 }
 
+/* Destination */
+.destination {
+  background-image: url(./assets/destination/background-destination-mobile.png);
+}
+
+@media (min-width: 35rem) {
+  .destination {
+    background-position: center center;
+    background-image: url(./assets/destination/background-destination-tablet.png);
+  }
+}
+
+@media (min-width: 45rem) {
+  .destination {
+    background-image: url(./assets/destination/background-destination-desktop.png);
+  }
+}
+
+/* Crew */
+.crew {
+  background-image: url(./assets/crew/background-crew-mobile.jpg);
+}
+
+@media (min-width: 35rem) {
+  .crew {
+    background-position: center center;
+    background-image: url(./assets/crew/background-crew-tablet.jpg);
+  }
+}
+
+@media (min-width: 45rem) {
+  .crew {
+    background-image: url(./assets/crew/background-crew-desktop.jpg);
+  }
+}
+
 /* -------------------------- */
 /* LAYOUT                     */
 /* -------------------------- */
@@ -581,6 +622,10 @@ body {
 
 .grid-container-crew > .crew-details {
   grid-area: content;
+}
+
+.crew-details h2 {
+  opacity: 0.5;
 }
 
 @media (min-width: 35em) {
