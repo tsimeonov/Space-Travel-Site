@@ -512,7 +512,13 @@ body {
 }
 
 /* anything inside the .grid-container */
-.grid-container * {
+/* .grid-container * {
+  outline: 1px solid red;
+  max-width: 50ch;
+} */
+
+/* Select any paragraph that does not have a class */
+.grid-container p:not([class]) {
   max-width: 50ch;
 }
 
@@ -603,7 +609,7 @@ body {
   }
 
   .destination-meta {
-    --gap: 6rem;
+    --gap: min(5vw, 6rem);
     justify-content: start;
   }
 }
