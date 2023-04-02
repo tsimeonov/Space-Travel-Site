@@ -16,7 +16,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site https://tsimeonov.github.io/Space-Tourism-Website/code/index.html
+- Live Site https://tsimeonov.github.io/Space-Travel-Site/code/index.html
 
 ### Built with
 
